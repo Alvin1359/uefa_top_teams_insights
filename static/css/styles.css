@@ -1,0 +1,11 @@
+#selDataset {
+    position: relative;
+    left: 35px;
+    top: 10px;
+}
+
+#image {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
