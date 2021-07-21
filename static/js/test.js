@@ -89,16 +89,20 @@ function changePlot() {
   var dataset = dropdownMenu.property("value");
   // console.log(dataset);
 
+  var url;
   // changing table image based on league selected
   if (dataset === "laliga") {
-    document.getElementById("image").src="{{ url_for('images', filename='table_laliga.jpg') }}";
+    document.getElementById("image").src="../static/image/table_laliga.jpg";
+    url = "/api/laliga";
   } else if (dataset === "premierleague") {
-    document.getElementById("image").src="{{ url_for('images', filename='table_premierleague.jpg') }}"
+    document.getElementById("image").src="../static/image/table_premierleague.jpg";
+    url = "/api/premierleague"
   } else {
-    document.getElementById("image").src="{{ url_for('images', filename='table_ligue1.jpg') }}"
+    document.getElementById("image").src="../static/image/table_ligue1.jpg";
+    url = "/api/ligue1"
   };
   
-  d3.csv(`"/api/${dataset}"`).then(function(response) {
+  d3.json(url).then(function(response) {
     console.log(response);
 
     var club = response[0].club;
