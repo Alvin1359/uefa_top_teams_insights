@@ -87,9 +87,9 @@ function changePlot() {
   var dropdownMenu = d3.select("#selDataset");
 
   var dataset = dropdownMenu.property("value");
-  // console.log(dataset);
 
   var url;
+
   // changing table image based on league selected
   if (dataset === "laliga") {
     document.getElementById("image").src="../static/image/table_laliga.jpg";
@@ -115,7 +115,6 @@ function changePlot() {
     // ==========================      
     var trace1 = {
       type: "bar",
-      // mode: "lines",
       x: club,
       y: pct_minutes_foreign,
       line: {
@@ -182,8 +181,6 @@ function changePlot() {
 
   Plotly.newPlot("plot2", data2, layout2);
   });
-
-
 }
 
 // call changePlot() when a change takes place to the DOM
