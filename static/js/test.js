@@ -91,11 +91,11 @@ function changePlot() {
 
   // changing table image based on league selected
   if (dataset === "laliga") {
-    document.getElementById("image").src="../../images/table_laliga.jpg";
+    document.getElementById("image").src="{{ url_for('images', filename='table_laliga.jpg') }}";
   } else if (dataset === "premierleague") {
-    document.getElementById("image").src="../../images/table_premierleague.jpg";
+    document.getElementById("image").src="{{ url_for('images', filename='table_premierleague.jpg') }}"
   } else {
-    document.getElementById("image").src="../../images/table_ligue1.jpg"
+    document.getElementById("image").src="{{ url_for('images', filename='table_ligue1.jpg') }}"
   };
   
   d3.csv(`"/api/${dataset}"`).then(function(response) {

@@ -1,0 +1,53 @@
+body{
+    margin:0px;
+}
+
+html {
+font-family: "Oswald", Helvetica, Arial, sans-serif!important;
+}
+
+img  {
+    float: left;
+}
+
+#teams {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 95%;
+}
+
+#teams tr:hover {background-color: primary;}
+
+#teams th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: black;
+}
+
+.carousel-item{
+    height: 500px;
+}
+
+.d-block {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+} 
+
+
+#selDataset {
+    position: relative;
+    left: 35px;
+    top: 10px;
+}
+
+#image {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
