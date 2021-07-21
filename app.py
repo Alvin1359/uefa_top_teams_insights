@@ -26,7 +26,7 @@ db = SQLAlchemy(app)
 #################################################
 
 class Premierleague_Foreign(db.Model):
-    __tablename__ = 'premier_league_foreign_minutes'
+    __tablename__ = 'premierleague_foreign_minutes'
 
     club = db.Column(db.String(64), primary_key=True)
     players_used = db.Column(db.Integer)
@@ -73,6 +73,10 @@ class LaLiga_Foreign(db.Model):
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/team_foreign_minutes")
+def foreign_minutes():
+    return render_template("test2.html")
 
 #################################################
 # API routes
