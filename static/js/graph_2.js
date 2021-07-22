@@ -3,7 +3,7 @@ function compareFunction(firstNum, secondNum){
 }
 
 function init() {
-d3.json("/api/laliga").then(function(response) {
+d3.json("/api/ligue1").then(function(response) {
     console.log(response);
 
     var club = response[0].club;
@@ -26,7 +26,7 @@ d3.json("/api/laliga").then(function(response) {
   var data = [trace1];
 
   var layout = {
-    title: `LALIGA Foreign Player Minutes Percentages`,
+    title: `LIGUE1 Foreign Player Minutes Percentages`,
     xaxis: {
       title: "Clubs"
     },
@@ -63,7 +63,7 @@ d3.json("/api/laliga").then(function(response) {
   var data2 = [trace2, trace3];
 
   var layout2 = {
-    title: `LALIGA Foreign Player Numbers`,
+    title: `LIGUE1 Foreign Player Numbers`,
     legend: {
       x: 1,
       xanchor: 'right',

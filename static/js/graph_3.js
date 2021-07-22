@@ -1,16 +1,20 @@
 d3.json("/api/all_team_data").then(function(response) {
     console.log(response);    
+
+    
     var teams = response[0].country;
     var goals = response[0].goals;
     var shots = response[0].shots_pg;
     var yellow_cards = response[0].yellow_cards;
     var red_cards = response[0].red_cards;
-    var possesions = response[0].possession_pct;
-    var pass = response[0].pass_pct;
+    var possesions_pct = response[0].possession_pct;
+    var pass_pct = response[0].pass_pct;
     var aerials_won = response[0].aerialswon;
     var rating = response[0].rating;
-    
-    // console.log(goals);   
+
+    var possesions = possesions_pct.map(x => x/100)
+    var pass = pass_pct.map(x => x/100)
+
 
     var GoalTrace = {
         x: teams,
@@ -19,6 +23,15 @@ d3.json("/api/all_team_data").then(function(response) {
         marker:{
             color: "green"},
         type: "bar",
+    };
+
+    var ShotsTrace = {
+        x: teams,
+        y: shots,
+        name: "Shots",
+        marker:{
+            color: "orange"},
+        type: "bar"
     };
 
     var YellowTrace = {
@@ -77,7 +90,7 @@ d3.json("/api/all_team_data").then(function(response) {
   
   
       // data
-      var barData = [GoalTrace, YellowTrace, RedTrace, PossesionTrace, PassTrace, AreailWinsTrace, RatingsTrace];
+      var barData = [GoalTrace, ShotsTrace, YellowTrace, RedTrace, PossesionTrace, PassTrace, AreailWinsTrace, RatingsTrace];
   
       // Apply the group bar mode to the layout
       var barLayout = {
