@@ -6,9 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>UEFA Champions League 2020-21</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="style.css">
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
+      
 
     <body>
       <header>
@@ -45,55 +46,49 @@
         </nav>
       </header>
 
-    <div class="container" style="padding-top: 20px;">
-      <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="../static/image/Chelsea_img1.jpg" alt="First slide">
-            <div class="carousel-caption d-none d-md-block bg-dark">
-              <h5>Chelsea</h5>
-              <p>Are the players performing the best in a team of foreign nationality?</p>
+        <section class="bg-primary text-light p-5 p-lg-0 pt-lg-5 text-right text-sm-start">
+          <div class="container">
+            <div class="row">
+                <div class="col-dm-4 pull-left">
+                  <img src="../static/image/ChampionsLeague.png" class="img-thumbnail" alt="UEFA cup image" width="400" height="600">
+                <div class="col-dm-8 pull-right">
+                  <blockquote  class="blockquote text-left">
+                      <p>The UEFA Champions League is UEFA's elite club competition with top clubs across the continent playing for the right to be crowned European champions.</p>
+                      <br>
+                      <p>The tournament, then called the European Cup, began in 1955/56 with 16 sides taking part.  It changed into the Champions League in 1992/93 and has expanded over the years with a total of 79 clubs entering in 2019/20.</p>
+                      <br>
+                      <p>Qualifying begins in the summer with three rounds and then a play-off taking place before 32 teams begin the group stage starting in September.</p>
+                      <br>
+                      <p>The group stage involves eight groups of four teams, with each club playing everyone else in that group home and away.  The top two sides in each group move on to the round of 16 and the start of the knockout phase, while the third-placed team drops into the UEFA Europa League.</p>
+                      <br>
+                      <p>The round of 16, quarter-finals and semi-finals are played over two legs, home and away, while the final is hosted by a stadium which is selected almost two years in advance.</p>
+                    <footer class="blockquote-footer">Source: <cite title="Source:">https://www.premierleague.com/uefa-champions-league-explained</cite></footer>
+                  </blockquote>
+               </div>
+              </div>
+            </div>
+        </section>
+
+        <section class="bg-light text-light p-5 p-lg-0 pt-lg-5 text-right text-sm-start">
+          <div class="container">
+            <div class="row">
+              <div class="col-dm-12">
+              <img src="../static/image/UEFA_clubs.png" class="img-thumbnail" alt="UEFA 20/21 table" width="1400" height="1650">
             </div>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../static/image/Real_Madrid_img2.jpg" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block bg-dark">
-              <h5>Real Madrid</h5>
-              <p>Are the players performing the best in a team of foreign nationality?</p>
+          </section>
+
+        <section class="bg-light text-light p-5 p-lg-0 pt-lg-5 text-right text-sm-start">
+          <div class="container">
+            <div class="row">
+              <div class="col-dm-12">
+              <img src="../static/image/20-21_table.png" class="img-thumbnail" alt="UEFA 20/21 table" width="1400" height="1650">
             </div>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../static/image/Paris_Saint_Germain_img3.jpg" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block bg-dark">
-              <h5>Paris Saint Germain</h5>
-              <p>Are the players performing the best in a team of foreign nationality?</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../static/image/Manchester_City_img4.jpg" alt="Fourth slide">
-            <div class="carousel-caption d-none d-md-block bg-dark">
-              <h5>Manchester City</h5>
-              <p>Are the players performing the best in a team of foreign nationality?</p>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-      
+          </section>
+
+        
+
         
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

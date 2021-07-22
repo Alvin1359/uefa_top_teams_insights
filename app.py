@@ -157,6 +157,21 @@ class RealMadrid_Players(db.Model):
     def __repr__(self):
         return '<Real Madrid Players %r>' % (self.name)
 
+class Top_Countries(db.Model):
+    __tablename__ = 'top_countries'
+
+    country = db.Column(db.String(64), primary_key=True)
+    rating = db.Column(db.Float)
+    goals = db.Column(db.Integer)
+    shots = db.Column(db.Float)
+    yellow_cards = db.Column(db.Integer)
+    red_cards = db.Column(db.Integer)
+    latitude = db.Column(db.Integer)
+    longitude = db.Column(db.Integer)
+
+    def __repr__(self):
+        return '<Real Madrid Players %r>' % (self.name)
+
 #################################################
 # Page routes
 #################################################
@@ -165,7 +180,11 @@ class RealMadrid_Players(db.Model):
 @app.route("/")
 def home():
     return render_template("index.html")
-    
+
+@app.route("/about")
+def about():
+    return render_template("About_UEFA.html")
+
 @app.route("/top_countries")
 def top_countries():
     return render_template("Graph_1.html")
@@ -300,7 +319,6 @@ def premierleague():
 def allplayers():
     results = db.session.query(All_Players.player, All_Players.club, All_Players.nationality, All_Players.country, All_Players.latitude, All_Players.longitude).all()
 
-
     players = [{
         "player": result[0],
         "club": result[1],
@@ -375,6 +393,23 @@ def realmaridplayers():
         } for result in results]
 
     return jsonify(players)
+
+@app.route("/api/top_countries")
+def topcountries():
+    results = db.session.query(Top_Countries.country, Top_Countries.rating, Top_Countries.goals, Top_Countries.shots, Top_Countries.yellow_cards, Top_Countries.red_cards, Top_Countries.latitude, Top_Countries.longitude).all()
+
+    countries = [{
+        "country": result[0],
+        "rating": result[1],
+        "goals": result[2],
+        "shots": result[3],
+        "yellow_cards": result[4],
+        "red_cards": result[5],
+        "latitude": result[6],
+        "longitude": result[7]
+        } for result in results]
+
+    return jsonify(countries)
 
 #################################################
 # Run app

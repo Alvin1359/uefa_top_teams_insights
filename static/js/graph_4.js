@@ -98,7 +98,7 @@ d3.json("/api/all_player_data").then(data => {
       20.3128, -40.0415
     ],
     zoom: 3,
-    layers: [lightmap, allPlayerLayer, chelseaPlayerLayer, manchesterPlayerLayer, psgPlayerLayer, realmadridPlayerLayer]
+    layers: [lightmap, allPlayerLayer]
   });
 
 
