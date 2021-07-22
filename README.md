@@ -3,7 +3,7 @@ Week 18 - Group 1
 
 ![UEFA champions league](https://editorial.uefa.com/resources/0269-1267e78b6989-ccff720e93c4-1000/manchester_city_v_chelsea_fc_-_uefa_champions_league_final.jpeg)
 
-This Project aims to Utilise EPL Player stats to build an EPL Dream team. By gathering multiple dataset statistics, the objective is to analyse, dissect and extract the important data to be readily available for useful application.
+This Project aims to Utilise The UEFA Champions League Team and Player stats to outline the NAtionality diversity amongst the UEFA Champions league top 4 Teams of the 20-2021 Season. By gathering multiple dataset statistics, the objective is to analyse, dissect and extract the important data to be readily available for useful application.
 
 
 ## Assignment structure
