@@ -14,7 +14,10 @@
     <body>
       <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="index.html"><strong>UEFA Champions League 2020-21</strong></a>
+          <a class="navbar-brand" href="index.html">
+            <img src="../static/image/ChampionsLeague.png" width="40" height="40" class="d-inline-block align-top" alt="soccer ball image">
+            <strong>UEFA Champions League 2020-21</strong>
+          </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,7 +28,7 @@
                           <a class="nav-link" href="About_UEFA.html"><strong>About UEFA </strong></a>
                         </li>
                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>Findings</strong></a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="Graph_1.html">Geo Map Of Top 4 Countries</a>
                             <a class="dropdown-item" href="Graph_2.html">Interactive Plotly Graph Of Played Minutes</a>
                             <a class="dropdown-item" href="Graph_3.html">Plotly Graph showing basic stats</a>
@@ -44,7 +47,6 @@
     </header>
         <div id="bar_chart"></div>
     
-        <script src="../static/js/bar_apps.js"></script>
-        <!-- <script src="Resources/Footballteams.csv"></script> -->
+        <script src="../static/js/graph_3.js"></script>
     </body>
 </html>

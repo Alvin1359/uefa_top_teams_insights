@@ -1,5 +1,6 @@
 # import necessary libraries
 import os
+import re
 from typing import Counter
 from flask import (
     Flask,
@@ -86,6 +87,20 @@ class LaLiga_Foreign(db.Model):
     def __repr__(self):
         return '<LaLiga Foreign Minutes %r>' % (self.name)
 
+class All_Players(db.Model):
+    __tablename__ = 'all_player_data'
+
+    player = db.Column(db.String(64), primary_key=True)
+    club = db.Column(db.String(64))
+    nationality = db.Column(db.String(64))
+    coordinates = db.Column(db.String(64))
+    country = db.Column(db.String(64))
+    latitude = db.Column(db.Integer)
+    longitude = db.Column(db.Integer)
+
+    def __repr__(self):
+        return '<All Players %r>' % (self.name)
+
 class Chelsea_Players(db.Model):
     __tablename__ = 'chelsea_players'
 
@@ -100,6 +115,47 @@ class Chelsea_Players(db.Model):
     def __repr__(self):
         return '<Chelsea Players %r>' % (self.name)
 
+class ManchesterUnited_Players(db.Model):
+    __tablename__ = 'manchester_united_players'
+
+    player = db.Column(db.String(64), primary_key=True)
+    club = db.Column(db.String(64))
+    nationality = db.Column(db.String(64))
+    coordinates = db.Column(db.String(64))
+    country = db.Column(db.String(64))
+    latitude = db.Column(db.Integer)
+    longitude = db.Column(db.Integer)
+
+    def __repr__(self):
+        return '<Manchester United Players %r>' % (self.name)
+
+class PSG_Players(db.Model):
+    __tablename__ = 'psg_players'
+
+    player = db.Column(db.String(64), primary_key=True)
+    club = db.Column(db.String(64))
+    nationality = db.Column(db.String(64))
+    coordinates = db.Column(db.String(64))
+    country = db.Column(db.String(64))
+    latitude = db.Column(db.Integer)
+    longitude = db.Column(db.Integer)
+
+    def __repr__(self):
+        return '<PSG Players %r>' % (self.name)
+
+class RealMadrid_Players(db.Model):
+    __tablename__ = 'real_madrid_players'
+
+    player = db.Column(db.String(64), primary_key=True)
+    club = db.Column(db.String(64))
+    nationality = db.Column(db.String(64))
+    coordinates = db.Column(db.String(64))
+    country = db.Column(db.String(64))
+    latitude = db.Column(db.Integer)
+    longitude = db.Column(db.Integer)
+
+    def __repr__(self):
+        return '<Real Madrid Players %r>' % (self.name)
 
 #################################################
 # Page routes
@@ -109,15 +165,30 @@ class Chelsea_Players(db.Model):
 @app.route("/")
 def home():
     return render_template("index.html")
-
-@app.route("/all_team_data")
-def team_data():
+    
+@app.route("/top_countries")
+def top_countries():
     return render_template("Graph_1.html")
 
 @app.route("/team_foreign_minutes")
 def foreign_minutes():
-    return render_template("test2.html")
+    return render_template("Graph_2.html")
 
+@app.route("/all_team_data")
+def team_data():
+    return render_template("Graph_3.html")
+
+@app.route("/geomap_player_nationalities")
+def geo_top():
+    return render_template("Graph_4.html")
+
+@app.route("/summary")
+def summary():
+    return render_template("summary.html")
+
+@app.route("/data")
+def data():
+    return render_template("Data_table.html")
 
 #################################################
 # API routes
@@ -225,34 +296,85 @@ def premierleague():
 
     return jsonify(premierleague_data)
 
+@app.route("/api/all_player_data")
+def allplayers():
+    results = db.session.query(All_Players.player, All_Players.club, All_Players.nationality, All_Players.country, All_Players.latitude, All_Players.longitude).all()
 
+
+    players = [{
+        "player": result[0],
+        "club": result[1],
+        "nationality": result[2],
+        "country": result[3],
+        "lat": result[4],
+        "lon": result[5]
+        } for result in results]
+
+    return jsonify(players)
+    
 @app.route("/api/chelsea_players")
 def chelseaplayers():
-    results = db.session.query(Chelsea_Players.player, Chelsea_Players.club, Chelsea_Players.nationality, Chelsea_Players.coordinates, Chelsea_Players.country, Chelsea_Players.latitude, Chelsea_Players.longitude).all()
+    results = db.session.query(Chelsea_Players.player, Chelsea_Players.club, Chelsea_Players.nationality, Chelsea_Players.country, Chelsea_Players.latitude, Chelsea_Players.longitude).all()
 
-    player = [result[0] for result in results]
-    club = [result[1] for result in results]
-    nationality = [result[2] for result in results]
-    coordinates = [result[3] for result in results]
-    country = [result[4] for result in results]
-    latitude = [result[5] for result in results]
-    longitude = [result[6] for result in results]
 
-    chelsea_players = {
-        "type": "Feature",
-        "geometry": {
-        "type": "Point",
-        "coordinates": [longitude, latitude]
-    },
-    "properties": {
-        "player": player,
-        "club": club,
-        "nationality": nationality,
-        "country": country
-     }
-    }
+    players = [{
+        "player": result[0],
+        "club": result[1],
+        "nationality": result[2],
+        "country": result[3],
+        "lat": result[4],
+        "lon": result[5]
+        } for result in results]
 
-    return jsonify(chelsea_players)
+    return jsonify(players)
+
+@app.route("/api/manchesterunited_players")
+def manchesterplayers():
+    results = db.session.query(ManchesterUnited_Players.player, ManchesterUnited_Players.club, ManchesterUnited_Players.nationality, ManchesterUnited_Players.country, ManchesterUnited_Players.latitude, ManchesterUnited_Players.longitude).all()
+
+
+    players = [{
+        "player": result[0],
+        "club": result[1],
+        "nationality": result[2],
+        "country": result[3],
+        "lat": result[4],
+        "lon": result[5]
+        } for result in results]
+
+    return jsonify(players)
+
+@app.route("/api/psg_players")
+def psgplayers():
+    results = db.session.query(PSG_Players.player, PSG_Players.club, PSG_Players.nationality, PSG_Players.country, PSG_Players.latitude, PSG_Players.longitude).all()
+
+
+    players = [{
+        "player": result[0],
+        "club": result[1],
+        "nationality": result[2],
+        "country": result[3],
+        "lat": result[4],
+        "lon": result[5]
+        } for result in results]
+
+    return jsonify(players)
+
+@app.route("/api/realmadrid_players")
+def realmaridplayers():
+    results = db.session.query(RealMadrid_Players.player, RealMadrid_Players.club, RealMadrid_Players.nationality, RealMadrid_Players.country, RealMadrid_Players.latitude, RealMadrid_Players.longitude).all()
+
+
+    players = [{
+        "player": result[0],
+        "club": result[1],
+        "nationality": result[2],
+        "country": result[3],
+        "lat": result[4],
+        "lon": result[5]
+        } for result in results]
+
+    return jsonify(players)
 
 #################################################
 # Run app
