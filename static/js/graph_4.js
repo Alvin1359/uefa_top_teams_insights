@@ -31,9 +31,9 @@ d3.json("/api/all_player_data").then(data => {
     if (player.club == "Chelsea FC") {
     // For each player, create a marker and bind a popup with the player's name
     var marker = chelseaMarkers.addLayer(L.marker([player.lat, player.lon])
-    .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Country: " + player.country))
+    .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Nationality: " + player.country))
     var marker2 = markers.addLayer(L.marker([player.lat, player.lon])
-    .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Country: " + player.country));
+    .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Nationality: " + player.country));
     // Add the marker to array
     chelseaPlayerMarkers.push(marker);
     allMarkers.push(marker2);
@@ -41,9 +41,9 @@ d3.json("/api/all_player_data").then(data => {
     } else if (player.club == "Manchester City") {
         // For each player, create a marker and bind a popup with the player's name
         var marker = manchesterMarkers.addLayer(L.marker([player.lat, player.lon])
-        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Country: " + player.country))
+        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Nationality: " + player.country))
         var marker2 = markers.addLayer(L.marker([player.lat, player.lon])
-        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Country: " + player.country));
+        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Nationality: " + player.country));
         // Add the marker to array
         manchesterPlayerMarkers.push(marker);
         allMarkers.push(marker2);
@@ -51,9 +51,9 @@ d3.json("/api/all_player_data").then(data => {
     } else if (player.club == "Paris Saint-Germain") {
         // For each player, create a marker and bind a popup with the player's name
         var marker = psgMarkers.addLayer(L.marker([player.lat, player.lon])
-        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Country: " + player.country))
+        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Nationality: " + player.country))
         var marker2 = markers.addLayer(L.marker([player.lat, player.lon])
-        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Country: " + player.country));
+        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Nationality: " + player.country));
         // Add the marker to array
         psgPlayerMarkers.push(marker);
         allMarkers.push(marker2);
@@ -61,9 +61,9 @@ d3.json("/api/all_player_data").then(data => {
     } else if (player.club == "Real Madrid") {
         // For each player, create a marker and bind a popup with the player's name
         var marker = realmadridMarkers.addLayer(L.marker([player.lat, player.lon])
-        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Country: " + player.country))
+        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Nationality: " + player.country))
         var marker2 = markers.addLayer(L.marker([player.lat, player.lon])
-        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Country: " + player.country));
+        .bindPopup("<h3>" + player.player + "</h3>" + "Club: " + player.club + "<br>Nationality: " + player.country));
         // Add the marker to array
         realmadridPlayerMarkers.push(marker);
         allMarkers.push(marker2);
