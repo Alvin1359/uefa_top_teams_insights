@@ -43,7 +43,6 @@ import pandas as pd
 import json
 from sqlalchemy import create_engine
 from geojson import Feature, FeatureCollection, Point
-
 ```
 To run locally, run `app.py`
 ```
