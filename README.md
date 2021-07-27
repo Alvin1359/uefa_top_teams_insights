@@ -22,11 +22,11 @@ project
 |
 |__ .gitignore             # gitignore file
 |
-|__  app.py                # python file to start local server
+|__ app.py                 # python file to start local server
 |
-|__  football.sqlite       # database containing all data tables
+|__ football.sqlite        # database containing all data tables
 |
-|__  Procfile              # Heroku usage
+|__ Procfile               # Heroku usage
 |
 |__ README.md              # Readme file
 |
