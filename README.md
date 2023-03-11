@@ -173,7 +173,7 @@ if __name__ == "__main__":
     app.run()
 ```
 ## Final Heroku Deployment
-The final web page is located in the following link: https://uefa--top4-insights-al001.herokuapp.com/
+The final webpage is located in the following link: https://uefa--top4-insights-al001.herokuapp.com/
 
 ## Conclusion
 - In summary, teams who have more minutes played by foreign players are likely to be closer to the top of the table in their respective leagues  
